@@ -4,8 +4,8 @@
 % PACKAGES
 %=================================================================
 \usepackage[a4paper, margin=2.5cm]{geometry}
-\usepackage{newpxtext,newpxmath}
 \usepackage{amsmath,amsthm}
+\usepackage{newpxtext,newpxmath}
 
 \usepackage[french]{babel}
 \usepackage[T1]{fontenc}
@@ -83,84 +83,21 @@
 
 \part*{Préface}
 \addcontentsline{toc}{part}{Préface}
-%\input{tex/preface}
+\input{tex/preface}
 
 %=================================================================
 % PARTIE NUMERO — TEMPLATE
 %=================================================================
 
- \part{NOM PARTIE}
- \etocsetnexttocdepth{section}
- \localtableofcontents
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+\part{Introduction à la logique}
+\etocsetnexttocdepth{section}
+\localtableofcontents
+\input{parts/part1/intro-logique}
 
 %=================================================================
 % INDEX DES MATIÈRES COMPLET
 %=================================================================
 \newpage
-
-\etocsetstyle{part}
-{\parindent0pt\vspace{2pt}}
-{}
-{\leftskip=0pt
-\bfseries
-\makebox[2em][l]{\etocnumber}
-\etocname\hfill\etocpage\par\vspace{-1pt}}
-{}
-
-\etocsetstyle{chapter}
-{}
-{}
-{\leftskip=2.5em
-\makebox[2em][l]{\etocnumber}
-\etocname\hfill\etocpage\par}
-{}
-
-\etocsetstyle{section}
-{}
-{}
-{\leftskip=5em
-\makebox[2em][l]{\etocnumber}
-\etocname\hfill\etocpage\par}
-{}
-
-\etocsetstyle{subsection}
-{}
-{}
-{\leftskip=7.5em
-\makebox[2em][l]{\etocnumber}
-\etocname\hfill\etocpage\par}
-{}
-
-\etocsetnexttocdepth{subsubsection}
-\tableofcontents
+\input{tex/end-tableofcontents}
 
 \end{document}
