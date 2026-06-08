@@ -1,0 +1,51 @@
+\usepackage{etoolbox}
+
+
+\usepackage{xparse}
+
+\NewDocumentEnvironment{axiom}{O{}O{}}{%
+  \begin{samepage}%
+  \begin{trivlist}\item[\hskip\labelsep
+    {\bfseries Axiome%
+      \ifblank{#1}{}{ #1}%
+      \ifblank{#2}{}{ \normalfont(#2)}%
+    \\}]%
+}{%
+  \end{trivlist}%
+  \end{samepage}%
+}
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Théorème}[chapter]
+\newtheorem{lemma}[theorem]{Lemme}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollaire}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Définition}
+\newtheorem{example}[theorem]{Exemple}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remarque}
+
+\renewcommand{\thetheorem}{\arabic{part}.\arabic{chapter}.\arabic{theorem}}
+\renewcommand{\thelemma}{\arabic{part}.\arabic{chapter}.\arabic{lemma}}
+\renewcommand{\theproposition}{\arabic{part}.\arabic{chapter}.\arabic{proposition}}
+\renewcommand{\thecorollary}{\arabic{part}.\arabic{chapter}.\arabic{corollary}}
+\renewcommand{\thedefinition}{\arabic{part}.\arabic{chapter}.\arabic{definition}}
+\renewcommand{\theremark}{\arabic{part}.\arabic{chapter}.\arabic{remark}}
+
+\BeforeBeginEnvironment{theorem}{\begin{samepage}}
+\AfterEndEnvironment{theorem}{\end{samepage}}
+\BeforeBeginEnvironment{lemma}{\begin{samepage}}
+\AfterEndEnvironment{lemma}{\end{samepage}}
+\BeforeBeginEnvironment{proposition}{\begin{samepage}}
+\AfterEndEnvironment{proposition}{\end{samepage}}
+\BeforeBeginEnvironment{corollary}{\begin{samepage}}
+\AfterEndEnvironment{corollary}{\end{samepage}}
+\BeforeBeginEnvironment{definition}{\begin{samepage}}
+\AfterEndEnvironment{definition}{\end{samepage}}
+\BeforeBeginEnvironment{example}{\begin{samepage}}
+\AfterEndEnvironment{example}{\end{samepage}}
+\BeforeBeginEnvironment{remark}{\begin{samepage}}
+\AfterEndEnvironment{remark}{\end{samepage}}
